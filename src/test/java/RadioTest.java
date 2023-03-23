@@ -4,6 +4,16 @@ import ru.netologu.javaqa.Radio;
 
 public class RadioTest {
     @Test
+    public void shouldSetStationCount() {
+        Radio radio = new Radio(15);
+        radio.setCurrentStation(9);
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetStationUnderLimit() {
         Radio radio = new Radio();
         radio.setCurrentStation(6);
